@@ -11,7 +11,8 @@ import UIKit
 struct NetworkManager {
     static let shared = NetworkManager()
     
-    static private let baseURL = "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
+    static private let baseURL =
+    "https://seanallen-course-backend.herokuapp.com/swiftui-fundamentals/"
     
     private let appetizersURL = baseURL + "appetizers"
     private let cache = NSCache<NSString,UIImage>()

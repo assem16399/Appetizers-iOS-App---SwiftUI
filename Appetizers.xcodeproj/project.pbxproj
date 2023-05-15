@@ -10,6 +10,9 @@
 		F42637852A090F4E0055203B /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42637842A090F4E0055203B /* RemoteImage.swift */; };
 		F42637912A0919C80055203B /* AppetizerRemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42637902A0919C80055203B /* AppetizerRemoteImage.swift */; };
 		F42637962A091B410055203B /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42637952A091B410055203B /* APError.swift */; };
+		F426379B2A09253F0055203B /* AppetizerDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */; };
+		F49FE1072A0CED3200634E07 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FE1062A0CED3200634E07 /* APButton.swift */; };
+		F49FE1092A0CF00800634E07 /* XDissmissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FE1082A0CF00800634E07 /* XDissmissButton.swift */; };
 		F4A60A722A03F03100AEA326 /* AppetizersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A60A712A03F03100AEA326 /* AppetizersListCell.swift */; };
 		F4A60A742A042A4900AEA326 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A60A732A042A4900AEA326 /* NetworkManager.swift */; };
 		F4A60A762A06964500AEA326 /* AppetizersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A60A752A06964500AEA326 /* AppetizersViewModel.swift */; };
@@ -30,6 +33,9 @@
 		F42637842A090F4E0055203B /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		F42637902A0919C80055203B /* AppetizerRemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerRemoteImage.swift; sourceTree = "<group>"; };
 		F42637952A091B410055203B /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
+		F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailCardView.swift; sourceTree = "<group>"; };
+		F49FE1062A0CED3200634E07 /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
+		F49FE1082A0CF00800634E07 /* XDissmissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDissmissButton.swift; sourceTree = "<group>"; };
 		F4A60A712A03F03100AEA326 /* AppetizersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersListCell.swift; sourceTree = "<group>"; };
 		F4A60A732A042A4900AEA326 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F4A60A752A06964500AEA326 /* AppetizersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersViewModel.swift; sourceTree = "<group>"; };
@@ -66,14 +72,15 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
-		F42637872A0918550055203B /* Presentation */ = {
+		F42637872A0918550055203B /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				F42637992A09250E0055203B /* AppetizerDetail */,
 				F42637882A09186A0055203B /* Appetizers */,
 				F426378A2A0918900055203B /* Orders */,
 				F42637892A0918760055203B /* Account */,
 			);
-			path = Presentation;
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		F42637882A09186A0055203B /* Appetizers */ = {
@@ -104,6 +111,7 @@
 		F426378B2A09189C0055203B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F49FE1052A0CED1B00634E07 /* Buttons */,
 				F42637982A091BE20055203B /* Cells */,
 				F42637922A091A4F0055203B /* Images */,
 				F426378E2A0919360055203B /* UIKitComponents */,
@@ -179,6 +187,23 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		F42637992A09250E0055203B /* AppetizerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */,
+			);
+			path = AppetizerDetail;
+			sourceTree = "<group>";
+		};
+		F49FE1052A0CED1B00634E07 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				F49FE1062A0CED3200634E07 /* APButton.swift */,
+				F49FE1082A0CF00800634E07 /* XDissmissButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		F4FB88982A0266F5005D4B73 = {
 			isa = PBXGroup;
 			children = (
@@ -202,7 +227,7 @@
 				F426378C2A0918D30055203B /* Models */,
 				F426378B2A09189C0055203B /* Views */,
 				F42637862A09180F0055203B /* Layout */,
-				F42637872A0918550055203B /* Presentation */,
+				F42637872A0918550055203B /* Screens */,
 				F4FB88A42A0266F5005D4B73 /* AppetizersApp.swift */,
 				F4FB88A82A0266F5005D4B73 /* Assets.xcassets */,
 				F4FB88AA2A0266F5005D4B73 /* Preview Content */,
@@ -291,7 +316,9 @@
 				F4A60A722A03F03100AEA326 /* AppetizersListCell.swift in Sources */,
 				F4FB88B92A0285AC005D4B73 /* Appetizer.swift in Sources */,
 				F4FB88B32A026D8B005D4B73 /* AppetizersOverviewTab.swift in Sources */,
+				F49FE1092A0CF00800634E07 /* XDissmissButton.swift in Sources */,
 				F4FCDF172A07E12600FE1F3B /* LoadingView.swift in Sources */,
+				F426379B2A09253F0055203B /* AppetizerDetailCardView.swift in Sources */,
 				F4FB88B72A026DB6005D4B73 /* OrdersOverviewTab.swift in Sources */,
 				F4FCDF192A07E23500FE1F3B /* Color+Ext.swift in Sources */,
 				F42637852A090F4E0055203B /* RemoteImage.swift in Sources */,
@@ -300,6 +327,7 @@
 				F4A60A742A042A4900AEA326 /* NetworkManager.swift in Sources */,
 				F42637962A091B410055203B /* APError.swift in Sources */,
 				F4FB88A72A0266F5005D4B73 /* AppetizersTabView.swift in Sources */,
+				F49FE1072A0CED3200634E07 /* APButton.swift in Sources */,
 				F4FB88A52A0266F5005D4B73 /* AppetizersApp.swift in Sources */,
 				F4FCDF152A07A6F100FE1F3B /* Alert.swift in Sources */,
 				F4FB88B52A026DA2005D4B73 /* AccountTab.swift in Sources */,
