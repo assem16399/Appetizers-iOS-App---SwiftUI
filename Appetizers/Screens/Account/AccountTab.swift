@@ -8,48 +8,46 @@
 import SwiftUI
 
 struct AccountTab: View {
-    @State private var firstName = ""
-    @State private var lastName = ""
-    @State private var email = ""
-    @State private var date = Date()
-    @State private var extraNapkins = false
-    @State private var frequentRefills = false
+    @StateObject var viewModel = AccountViewModel()
+    
     var body: some View {
         NavigationStack {
             Form{
-                Section{
-                    TextField("First Name", text: $firstName)
+                Section(header: Text("PERSONAL INFO")){
+                    TextField("First Name", text: $viewModel.userFirstName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                     
-                    TextField("Last Name", text: $lastName)
+                    TextField("Last Name", text: $viewModel.userLastName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                     
-                    TextField("Email", text: $lastName)
-                        .textInputAutocapitalization(.words)
+                    TextField("Email", text: $viewModel.userEmail)
                         .autocorrectionDisabled(true)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                     
-                    DatePicker("Birthday", selection: $date, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $viewModel.birthdate, displayedComponents: .date)
                     
-                    Button{}label: {
+                    Button{
+                        viewModel.saveChanges()
+                    }label: {
                         Text("Save Changes")
                     }
-                }header: {
-                    Text("PERSONAL INFO")
                 }
             
                 Section{
-                    Toggle("Extra Napkins", isOn: $extraNapkins)
-                    Toggle("Frequent Refills", isOn: $frequentRefills)
+                    Toggle("Extra Napkins", isOn: $viewModel.hasExtraNapkins)
+                    Toggle("Frequent Refills", isOn: $viewModel.hasFrequentRefills)
                 }header: {
                     Text("Requests")
                 }
                 .tint(.brandPrimary)
             }
                 .navigationTitle("🥹Account")
+                .alert(item: $viewModel.alertItem){alert in
+                    Alert(title: alert.title,message: alert.message,dismissButton: alert.dismissButton)
+                }
         }
     
     }

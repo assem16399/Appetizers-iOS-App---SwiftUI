@@ -27,6 +27,8 @@
 		F4FCDF152A07A6F100FE1F3B /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDF142A07A6F100FE1F3B /* Alert.swift */; };
 		F4FCDF172A07E12600FE1F3B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDF162A07E12600FE1F3B /* LoadingView.swift */; };
 		F4FCDF192A07E23500FE1F3B /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FCDF182A07E23500FE1F3B /* Color+Ext.swift */; };
+		F4FE1B522A139E2F00F49881 /* AccountViemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE1B512A139E2F00F49881 /* AccountViemModel.swift */; };
+		F4FE1B542A13A68800F49881 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FE1B532A13A68800F49881 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,8 @@
 		F4FCDF142A07A6F100FE1F3B /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		F4FCDF162A07E12600FE1F3B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F4FCDF182A07E23500FE1F3B /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		F4FE1B512A139E2F00F49881 /* AccountViemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViemModel.swift; sourceTree = "<group>"; };
+		F4FE1B532A13A68800F49881 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FB88B42A026DA2005D4B73 /* AccountTab.swift */,
+				F4FE1B512A139E2F00F49881 /* AccountViemModel.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				F4FCDF182A07E23500FE1F3B /* Color+Ext.swift */,
+				F4FE1B532A13A68800F49881 /* String+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -326,10 +332,12 @@
 				F42637912A0919C80055203B /* AppetizerRemoteImage.swift in Sources */,
 				F4A60A742A042A4900AEA326 /* NetworkManager.swift in Sources */,
 				F42637962A091B410055203B /* APError.swift in Sources */,
+				F4FE1B522A139E2F00F49881 /* AccountViemModel.swift in Sources */,
 				F4FB88A72A0266F5005D4B73 /* AppetizersTabView.swift in Sources */,
 				F49FE1072A0CED3200634E07 /* APButton.swift in Sources */,
 				F4FB88A52A0266F5005D4B73 /* AppetizersApp.swift in Sources */,
 				F4FCDF152A07A6F100FE1F3B /* Alert.swift in Sources */,
+				F4FE1B542A13A68800F49881 /* String+Ext.swift in Sources */,
 				F4FB88B52A026DA2005D4B73 /* AccountTab.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
