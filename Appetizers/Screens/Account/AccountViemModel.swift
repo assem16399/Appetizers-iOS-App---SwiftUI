@@ -8,20 +8,16 @@
 import Foundation
 
 final class AccountViewModel: ObservableObject {
-    @Published  var userFirstName = ""
-    @Published  var userLastName = ""
-    @Published  var userEmail = ""
-    @Published  var birthdate = Date()
-    @Published  var hasExtraNapkins = false
-    @Published  var hasFrequentRefills = false
+    @Published var user = User()
     @Published var alertItem: AlertItem?
     
+    
     var isValidForm: Bool {
-        guard !userFirstName.isEmpty && !userLastName.isEmpty && !userEmail.isEmpty else {
+        guard user.isNotEmpty else {
             alertItem = AlertContext.missingInput
             return false
         }
-        guard userEmail.isValidEmail else {
+        guard user.userEmail.isValidEmail else {
             alertItem = AlertContext.invalidEmail
             return false
         }

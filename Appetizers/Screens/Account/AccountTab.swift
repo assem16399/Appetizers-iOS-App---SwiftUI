@@ -14,20 +14,20 @@ struct AccountTab: View {
         NavigationStack {
             Form{
                 Section(header: Text("PERSONAL INFO")){
-                    TextField("First Name", text: $viewModel.userFirstName)
+                    TextField("First Name", text: $viewModel.user.userFirstName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                     
-                    TextField("Last Name", text: $viewModel.userLastName)
+                    TextField("Last Name", text: $viewModel.user.userLastName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                     
-                    TextField("Email", text: $viewModel.userEmail)
+                    TextField("Email", text: $viewModel.user.userEmail)
                         .autocorrectionDisabled(true)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                     
-                    DatePicker("Birthday", selection: $viewModel.birthdate, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $viewModel.user.birthdate, displayedComponents: .date)
                     
                     Button{
                         viewModel.saveChanges()
@@ -37,8 +37,8 @@ struct AccountTab: View {
                 }
             
                 Section{
-                    Toggle("Extra Napkins", isOn: $viewModel.hasExtraNapkins)
-                    Toggle("Frequent Refills", isOn: $viewModel.hasFrequentRefills)
+                    Toggle("Extra Napkins", isOn: $viewModel.user.hasExtraNapkins)
+                    Toggle("Frequent Refills", isOn: $viewModel.user.hasFrequentRefills)
                 }header: {
                     Text("Requests")
                 }
