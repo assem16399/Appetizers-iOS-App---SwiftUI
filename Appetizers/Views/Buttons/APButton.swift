@@ -9,7 +9,7 @@ import SwiftUI
 
 struct APButton: View {
     let title: LocalizedStringKey
-    let action: ()->Void
+    let action: () -> Void
 
     var body: some View {
         

@@ -51,4 +51,23 @@ struct AlertContext {
     AlertItem(title:Text("Missing Input"),
               message: Text("Please enter all required fields"),
               dismissButton: .default(Text("OK")))
+    
+    //MARK: - Cache Alerts
+
+    static let unableToSaveInCache =
+    AlertItem(title:Text("Cache Failure"),
+              message: Text("Unable to save data in cache."),
+              dismissButton: .default(Text("OK")))
+    
+    
+    static let unableToRetrieveFromCache =
+    AlertItem(title:Text("Cache Failure"),
+              message: Text("Unable to retrieve data from cache."),
+              dismissButton: .default(Text("OK")))
+    
+    static let dataSavedInCacheSuccessfully =
+    AlertItem(title:Text("Data Saved"),
+              message: Text("Data saved in cache successfully."),
+              dismissButton: .default(Text("OK")))
+
 }

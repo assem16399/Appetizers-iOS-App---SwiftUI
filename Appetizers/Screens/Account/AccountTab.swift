@@ -30,7 +30,7 @@ struct AccountTab: View {
                     DatePicker("Birthday", selection: $viewModel.user.birthdate, displayedComponents: .date)
                     
                     Button{
-                        viewModel.saveChanges()
+                        viewModel.saveUserChanges()
                     }label: {
                         Text("Save Changes")
                     }
@@ -38,6 +38,7 @@ struct AccountTab: View {
             
                 Section{
                     Toggle("Extra Napkins", isOn: $viewModel.user.hasExtraNapkins)
+                    
                     Toggle("Frequent Refills", isOn: $viewModel.user.hasFrequentRefills)
                 }header: {
                     Text("Requests")
@@ -45,6 +46,9 @@ struct AccountTab: View {
                 .tint(.brandPrimary)
             }
                 .navigationTitle("🥹Account")
+                .onAppear{
+                    viewModel.retrieveUser()
+                }
                 .alert(item: $viewModel.alertItem){alert in
                     Alert(title: alert.title,message: alert.message,dismissButton: alert.dismissButton)
                 }

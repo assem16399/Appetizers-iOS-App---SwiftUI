@@ -15,10 +15,10 @@ struct AppetizersTabView: View {
                     Image(systemName: "house")
                     Text("Appetizers")
                 }
-            OrdersOverviewTab()
+            CartTab()
                 .tabItem{
-                    Image(systemName: "bag")
-                    Text("Orders")
+                    Image(systemName: "cart")
+                    Text("Cart")
                 }
             AccountTab()
                 .tabItem{

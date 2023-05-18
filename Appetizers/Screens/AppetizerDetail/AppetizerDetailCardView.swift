@@ -32,7 +32,7 @@ struct AppetizerDetailCardView: View {
             
             Spacer()
             
-            APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Order"){
+            APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Cart"){
                 
             }
         }

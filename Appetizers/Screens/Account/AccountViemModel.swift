@@ -5,12 +5,13 @@
 //  Created by Aasem Hany on 16/05/2023.
 //
 
-import Foundation
+import SwiftUI
 
 final class AccountViewModel: ObservableObject {
+    
     @Published var user = User()
     @Published var alertItem: AlertItem?
-    
+    @AppStorage("user") private var userData: Data?
     
     var isValidForm: Bool {
         guard user.isNotEmpty else {
@@ -25,9 +26,25 @@ final class AccountViewModel: ObservableObject {
     }
     
   
-    func saveChanges() {
+    func saveUserChanges() {
         guard isValidForm else { return }
-        print("Changes Saved Successfully")
+        do{
+            userData = try JSONEncoder().encode(user)
+            alertItem = AlertContext.dataSavedInCacheSuccessfully
+        }
+        catch{
+            alertItem = AlertContext.unableToSaveInCache
+        }
+    }
+    
+    func retrieveUser() {
+        guard let userData else { return }
+        do{
+            user = try JSONDecoder().decode(User.self, from: userData)
+        }
+        catch{
+            alertItem = AlertContext.unableToRetrieveFromCache
+        }
     }
     
     
