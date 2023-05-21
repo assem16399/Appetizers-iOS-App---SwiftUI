@@ -28,7 +28,7 @@ struct AppetizersMockData{
     
     static let appetizersMock = Array(repeating: AppetizersMockData.sampleAppetizer, count: 20)
     
-    static let ordersMock = [
+    static let cartMock = [
         Appetizer(id: 1,
                   name: "Appetizer Name1",
                   imageURL: "",

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AppetizerDetailCardView: View {
+    @EnvironmentObject var userCart: Cart
     let appetizer:Appetizer
     @Binding var isShowingDetailView:Bool
     var body: some View {
@@ -33,7 +34,8 @@ struct AppetizerDetailCardView: View {
             Spacer()
             
             APButton(title: "$\(appetizer.price, specifier: "%.2f") - Add To Cart"){
-                
+                userCart.add(appetizer)
+                isShowingDetailView = false
             }
         }
             .frame(width: 300,height: 525)

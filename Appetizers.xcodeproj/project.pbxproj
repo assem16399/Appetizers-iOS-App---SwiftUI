@@ -12,6 +12,8 @@
 		F42637962A091B410055203B /* APError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42637952A091B410055203B /* APError.swift */; };
 		F426379B2A09253F0055203B /* AppetizerDetailCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */; };
 		F454653A2A151EB800577984 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45465392A151EB800577984 /* User.swift */; };
+		F471E6622A1A49F200AEB19C /* DefaultEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E6612A1A49F200AEB19C /* DefaultEmptyStateView.swift */; };
+		F471E6662A1A679000AEB19C /* Cart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F471E6652A1A679000AEB19C /* Cart.swift */; };
 		F49FE1072A0CED3200634E07 /* APButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FE1062A0CED3200634E07 /* APButton.swift */; };
 		F49FE1092A0CF00800634E07 /* XDissmissButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F49FE1082A0CF00800634E07 /* XDissmissButton.swift */; };
 		F4A60A722A03F03100AEA326 /* AppetizersListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4A60A712A03F03100AEA326 /* AppetizersListCell.swift */; };
@@ -38,6 +40,8 @@
 		F42637952A091B410055203B /* APError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APError.swift; sourceTree = "<group>"; };
 		F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizerDetailCardView.swift; sourceTree = "<group>"; };
 		F45465392A151EB800577984 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F471E6612A1A49F200AEB19C /* DefaultEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultEmptyStateView.swift; sourceTree = "<group>"; };
+		F471E6652A1A679000AEB19C /* Cart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart.swift; sourceTree = "<group>"; };
 		F49FE1062A0CED3200634E07 /* APButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APButton.swift; sourceTree = "<group>"; };
 		F49FE1082A0CF00800634E07 /* XDissmissButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XDissmissButton.swift; sourceTree = "<group>"; };
 		F4A60A712A03F03100AEA326 /* AppetizersListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppetizersListCell.swift; sourceTree = "<group>"; };
@@ -118,6 +122,7 @@
 		F426378B2A09189C0055203B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				F471E6602A1A49A100AEB19C /* EmptyStates */,
 				F49FE1052A0CED1B00634E07 /* Buttons */,
 				F42637982A091BE20055203B /* Cells */,
 				F42637922A091A4F0055203B /* Images */,
@@ -131,6 +136,7 @@
 			children = (
 				F4FB88B82A0285AC005D4B73 /* Appetizer.swift */,
 				F45465392A151EB800577984 /* User.swift */,
+				F471E6652A1A679000AEB19C /* Cart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,6 +208,14 @@
 				F426379A2A09253F0055203B /* AppetizerDetailCardView.swift */,
 			);
 			path = AppetizerDetail;
+			sourceTree = "<group>";
+		};
+		F471E6602A1A49A100AEB19C /* EmptyStates */ = {
+			isa = PBXGroup;
+			children = (
+				F471E6612A1A49F200AEB19C /* DefaultEmptyStateView.swift */,
+			);
+			path = EmptyStates;
 			sourceTree = "<group>";
 		};
 		F49FE1052A0CED1B00634E07 /* Buttons */ = {
@@ -334,6 +348,7 @@
 				F4A60A762A06964500AEA326 /* AppetizersViewModel.swift in Sources */,
 				F42637912A0919C80055203B /* AppetizerRemoteImage.swift in Sources */,
 				F4A60A742A042A4900AEA326 /* NetworkManager.swift in Sources */,
+				F471E6662A1A679000AEB19C /* Cart.swift in Sources */,
 				F42637962A091B410055203B /* APError.swift in Sources */,
 				F4FE1B522A139E2F00F49881 /* AccountViemModel.swift in Sources */,
 				F4FB88A72A0266F5005D4B73 /* AppetizersTabView.swift in Sources */,
@@ -342,6 +357,7 @@
 				F4FCDF152A07A6F100FE1F3B /* Alert.swift in Sources */,
 				F4FE1B542A13A68800F49881 /* String+Ext.swift in Sources */,
 				F4FB88B52A026DA2005D4B73 /* AccountTab.swift in Sources */,
+				F471E6622A1A49F200AEB19C /* DefaultEmptyStateView.swift in Sources */,
 				F454653A2A151EB800577984 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

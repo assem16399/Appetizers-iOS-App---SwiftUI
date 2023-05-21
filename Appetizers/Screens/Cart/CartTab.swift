@@ -8,27 +8,31 @@
 import SwiftUI
 
 struct CartTab: View {
-    @State private var cartItems = AppetizersMockData.ordersMock
+    @EnvironmentObject var userCart: Cart
     var body: some View {
         NavigationStack {
+            
             VStack {
-                
-                List{
-                    ForEach(AppetizersMockData.ordersMock){
-                        appetizer in
-                        AppetizersListCell(appetizer: appetizer)
+                if userCart.cartItems.isEmpty {
+                    DefaultEmptyStateView(systemNameImage: "cart.badge.plus", msg: "Your cart is empty🥲.\nStart filling it now🤤.")
+                }else{
+                    List{
+                        ForEach(userCart.cartItems){
+                            appetizer in
+                            AppetizersListCell(appetizer: appetizer)
+                        }
+                        .onDelete(perform: deleteItem )
                     }
-                    .onDelete(perform: deleteItems)
+                    
+                    APButton(title: "$\(userCart.totalPrice, specifier:"%0.2f") - Place Order "){}
                 }
-                
-                APButton(title: "$\(34.3100000000,specifier:"%0.2f") - Place Order "){}
             }
             .navigationTitle("🛒Cart")
         }
     }
     
-    func deleteItems(at offsets: IndexSet) {
-        cartItems.remove(atOffsets: offsets)
+    func deleteItem(at offsets: IndexSet) {
+        userCart.delete(at: offsets)
     }
 }
 
