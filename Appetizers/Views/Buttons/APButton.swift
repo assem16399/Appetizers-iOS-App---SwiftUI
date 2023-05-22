@@ -18,9 +18,7 @@ struct APButton: View {
                 .font(.title2)
                 .fontWeight(.semibold)
         })
-        .buttonStyle(.borderedProminent)
-        .controlSize(.large)
-        .tint(.red)
+        .modifier(DefaultButtonModifier())
         .padding(15)
     }
 }

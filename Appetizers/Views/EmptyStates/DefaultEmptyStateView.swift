@@ -12,7 +12,7 @@ struct DefaultEmptyStateView: View {
     let msg: String
     var body: some View {
         ZStack{
-            Color(.white)
+            Color(uiColor: UIColor.systemBackground)
                 .ignoresSafeArea(.all)
             VStack{
                

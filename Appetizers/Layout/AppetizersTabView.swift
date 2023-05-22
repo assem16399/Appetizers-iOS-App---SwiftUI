@@ -8,23 +8,16 @@
 import SwiftUI
 
 struct AppetizersTabView: View {
+    @EnvironmentObject var userCart: Cart
     var body: some View {
         TabView {
             AppetizersOverviewTab()
-                .tabItem{
-                    Image(systemName: "house")
-                    Text("Appetizers")
-                }
+                .tabItem{ Label("Appetizers", systemImage: "house") }
             CartTab()
-                .tabItem{
-                    Image(systemName: "cart")
-                    Text("Cart")
-                }
+                .tabItem{ Label("Cart", systemImage: "cart") }
+                .badge(userCart.cartItems.count)
             AccountTab()
-                .tabItem{
-                    Image(systemName: "person")
-                    Text("Account")
-                }
+                .tabItem{ Label("Account", systemImage: "person") }
         }
         .tint(.brandPrimary)
         
