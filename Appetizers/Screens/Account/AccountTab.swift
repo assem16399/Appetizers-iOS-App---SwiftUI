@@ -7,25 +7,45 @@
 
 import SwiftUI
 
+
 struct AccountTab: View {
     @StateObject var viewModel = AccountViewModel()
+    @FocusState var focusedTextField: FocusedTextField?
+    
+    enum FocusedTextField {
+        case firstName
+        case lastName
+        case email
+    }
     
     var body: some View {
         NavigationStack {
+            
             Form{
                 Section(header: Text("PERSONAL INFO")){
                     TextField("First Name", text: $viewModel.user.userFirstName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
+                        .focused($focusedTextField, equals: .firstName)
+                        .onSubmit { focusedTextField = .lastName }
+                        .submitLabel(.next)
                     
                     TextField("Last Name", text: $viewModel.user.userLastName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
+                        .focused($focusedTextField, equals: .lastName)
+                        .onSubmit { focusedTextField = .email }
+                        .submitLabel(.next)
+                    
                     
                     TextField("Email", text: $viewModel.user.userEmail)
                         .autocorrectionDisabled(true)
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
+                        .focused($focusedTextField, equals: .email)
+                        .onSubmit { focusedTextField = nil }
+                        .submitLabel(.continue)
+                    
                     
                     DatePicker("Birthday", selection: $viewModel.user.birthdate, displayedComponents: .date)
                     
@@ -35,7 +55,7 @@ struct AccountTab: View {
                         Text("Save Changes")
                     }
                 }
-            
+                
                 Section{
                     Toggle("Extra Napkins", isOn: $viewModel.user.hasExtraNapkins)
                     
@@ -45,15 +65,20 @@ struct AccountTab: View {
                 }
                 .tint(.brandPrimary)
             }
-                .navigationTitle("🥹Account")
-                .onAppear{
-                    viewModel.retrieveUser()
+            .toolbar{
+                ToolbarItemGroup(placement: .keyboard){
+                    Button{ focusedTextField = nil } label: { Text("Done") }
                 }
-                .alert(item: $viewModel.alertItem){alert in
-                    Alert(title: alert.title,message: alert.message,dismissButton: alert.dismissButton)
-                }
+            }
+            .navigationTitle("🥹Account")
+            .onAppear{ viewModel.retrieveUser() }
+            .alert(item: $viewModel.alertItem){ alert in
+                Alert(title: alert.title,
+                      message: alert.message,
+                      dismissButton: alert.dismissButton)
+            }
         }
-    
+        
     }
 }
 
