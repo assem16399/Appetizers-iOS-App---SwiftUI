@@ -27,15 +27,16 @@ struct AccountTab: View {
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                         .focused($focusedTextField, equals: .firstName)
-                        .onSubmit { focusedTextField = .lastName }
                         .submitLabel(.next)
+                        .onSubmit { focusedTextField = .lastName }
+                        
                     
                     TextField("Last Name", text: $viewModel.user.userLastName)
                         .textInputAutocapitalization(.words)
                         .autocorrectionDisabled(true)
                         .focused($focusedTextField, equals: .lastName)
-                        .onSubmit { focusedTextField = .email }
                         .submitLabel(.next)
+                        .onSubmit { focusedTextField = .email }
                     
                     
                     TextField("Email", text: $viewModel.user.userEmail)
@@ -43,8 +44,8 @@ struct AccountTab: View {
                         .keyboardType(.emailAddress)
                         .textInputAutocapitalization(.never)
                         .focused($focusedTextField, equals: .email)
-                        .onSubmit { focusedTextField = nil }
                         .submitLabel(.continue)
+                        .onSubmit { focusedTextField = nil }
                     
                     
                     DatePicker("Birthday", selection: $viewModel.user.birthdate, displayedComponents: .date)

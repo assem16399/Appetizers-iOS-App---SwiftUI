@@ -55,6 +55,17 @@ struct NetworkManager {
         
     }
     
+    func getAppetizers2()async throws ->[Appetizer] {
+        guard let url = URL(string: appetizersURL) else { throw customError.invalidURL }
+        let (data,_) = try await URLSession.shared.data(for: URLRequest(url: url))
+        do{
+            let decoder = JSONDecoder()
+            let appetizersData = try decoder.decode(AppetizersResponse.self, from: data)
+            return appetizersData.request
+        }
+        catch{ throw customError.invalidData }
+    }
+    
     func downloadImage(fromUrlString url: String,completed:@escaping(UIImage?)-> Void){
         let cacheKey = NSString(string: url)
         if let cachedImage = cache.object(forKey: cacheKey) {

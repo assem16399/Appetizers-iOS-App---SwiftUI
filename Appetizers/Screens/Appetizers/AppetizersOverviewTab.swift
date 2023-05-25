@@ -15,7 +15,7 @@ struct AppetizersOverviewTab: View {
         ZStack{
             NavigationStack {
                 ZStack{
-                    if(!viewModel.hasNotData)
+                    if(!viewModel.hasNoData)
                     {
                         AppetizersListView(
                             appetizers: viewModel.getAppetizers(),
@@ -32,7 +32,7 @@ struct AppetizersOverviewTab: View {
                 .navigationTitle("🍟Appetizers")
             }
             .onAppear{
-                viewModel.getAppetizers()
+                viewModel.getAppetizers2()
             }
             .blur(radius: viewModel.isShowingDetail ? 20 : 0)
             .disabled(viewModel.isShowingDetail)
